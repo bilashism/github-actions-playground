@@ -2,31 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'TTInterfaces-Regular';
-  src: url('./assets/fonts/ttinterfaces/TTInterfaces-Regular.otf')
-    format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TTInterfaces-Medium';
-  src: url('./assets/fonts/ttinterfaces/TTInterfaces-Medium.otf')
-    format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TTInterfaces-DemiBold';
-  src: url('./assets/fonts/ttinterfaces/TTInterfaces-DemiBold.otf')
-    format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'TTInterfaces-Bold';
-  src: url('./assets/fonts/ttinterfaces/TTInterfaces-Bold.otf')
-    format('opentype');
-  font-display: swap;
-}
-
 :root {
   --test: theme(colors.gray.950);
 }
