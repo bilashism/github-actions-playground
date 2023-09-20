@@ -1,33 +1,53 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code, and run tests across different versions of node
+# For more information, see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Publish website
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: '*'
+    branches:
+      - '*'
 
 jobs:
   build:
 
-    runs-on: ${{ matrix.node-version }}
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        node-version: [ 18.x ]
-        os: [ ubuntu-latest ]
+        node-version: [18.x]
+        os: [ubuntu-latest]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - name: Checkout code
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm' # Use pnpm for caching
-    - run: pnpm install # Use pnpm to install dependencies
-    - run: pnpm run build --if-present # Use pnpm to build (if needed)
-    - run: pnpm test # Use pnpm to run tests
+
+    - name: Install pnpm
+      run: |
+        npm install -g pnpm
+      # Or, if pnpm is already specified in your project's package.json, you can skip this step.
+
+    - name: Install dependencies
+      run: |
+        pnpm install
+      # Use pnpm to install dependencies
+
+    - name: Build (if present)
+      run: |
+        pnpm run build --if-present
+      # Use pnpm to build (if needed)
+
+    - name: Run tests
+      run: |
+        pnpm test
+      # Use pnpm to run tests
