@@ -1,0 +1,25 @@
+.banner-slider
+  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  position: absolute;
+  left: unset;
+  top: unset;
+  right: 1rem;
+  bottom: 1rem;
+  transform: none;
+  width: 6rem !important;
+  height: auto;
+}
+.banner-slider .swiper-pagination-bullet {
+  height: 0.375rem;
+  width: 0.625rem;
+  border-radius: 0.625rem;
+  background-color: theme('colors.brand.primary.color-1'/0.5);
+}
+.banner-slider .swiper-pagination-bullet-active {
+  width: 2rem;
+  background-color: theme('colors.brand.primary.color-1');
+}
+.banner-slider .swiper-pagination-bullet-active-prev,
+.banner-slider .swiper-pagination-bullet-active-next {
+  transform: scale(1);
+}

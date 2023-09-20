@@ -1,0 +1,19 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "html",
+    "typescript": "html",
+    "typescriptreact": "html",
+    "css": "css"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "cSpell.words": ["fullboosts", "oxanium"],
+  "editor.wordWrap": "on",
+  "editor.fontSize": 17
+}

@@ -1,0 +1,188 @@
+[
+  {
+    "gameUid": "valorant",
+    "category": "action",
+    "id": "offer0012",
+    "uid": "gaming-handset-x2840",
+    "name": "Gaming Handset X2840",
+    "price": 400,
+    "label": "Bestseller",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Immerse yourself lorem fghi in gaming with crystal-clear sound.",
+    "bulletPoints": [
+      "High-fidelity audio",
+      "Noise-cancelling microphone",
+      "Comfortable design for long gaming sessions"
+    ]
+  },
+  {
+    "gameUid": "world-of-warcraft",
+    "category": "action",
+    "id": "offer001",
+    "uid": "gaming-headset-x2000",
+    "name": "Gaming Headset X2000",
+    "price": 49.99,
+    "label": "Bestseller",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Immerse yourself in gaming with crystal-clear sound.",
+    "bulletPoints": [
+      "High-fidelity audio",
+      "Noise-cancelling microphone",
+      "Comfortable design for long gaming sessions"
+    ]
+  },
+  {
+    "gameUid": "player-unknown-s-battlegrounds-pubg",
+    "category": "action",
+    "id": "offer002",
+    "uid": "ultra-wide-gaming-monitor",
+    "name": "UltraWide Gaming Monitor",
+    "price": 699.0,
+    "label": "New Arrival",
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Experience gaming like never before with the widescreen display.",
+    "bulletPoints": [
+      "34-inch curved screen",
+      "High refresh rate for smooth gameplay",
+      "Multiple connectivity options"
+    ]
+  },
+  {
+    "gameUid": "grand-theft-auto-v",
+    "category": "action",
+    "id": "offer003",
+    "uid": "gaming-laptop-pro-x",
+    "name": "Gaming Laptop ProX",
+    "price": 1599.99,
+    "label": "Hot offer",
+    "discount": 15,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Unleash the power of gaming with our top-of-the-line laptop.",
+    "bulletPoints": [
+      "Intel Core i9 processor",
+      "NVIDIA GeForce RTX graphics",
+      "RGB backlit keyboard"
+    ]
+  },
+  {
+    "gameUid": "world-of-warcraft",
+    "category": "action",
+    "id": "offer004",
+    "uid": "wireless-gaming-mouse",
+    "name": "Wireless Gaming Mouse",
+    "price": 79.99,
+    "label": "Best Value",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Enhance your gaming performance with ultimate freedom of movement.",
+    "bulletPoints": [
+      "Adjustable DPI settings",
+      "Ergonomic design for a comfortable grip",
+      "Long-lasting battery life"
+    ]
+  },
+  {
+    "gameUid": "grand-theft-auto-v",
+    "category": "action",
+    "id": "offer005",
+    "uid": "racing-game-wheel",
+    "name": "Racing Game Wheel",
+    "price": 149.95,
+    "label": "Limited Stock",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Turn your racing games into a realistic driving experience.",
+    "bulletPoints": [
+      "Full 900-degree rotation",
+      "Responsive force feedback",
+      "Sturdy build for lasting durability"
+    ]
+  },
+  {
+    "gameUid": "diablo4",
+    "category": "action",
+    "id": "offer006",
+    "uid": "gaming-keyboard-rgb-pro",
+    "name": "Gaming Keyboard RGB Pro",
+    "price": 129.0,
+    "label": "Editor's Choice",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Get the competitive edge with customizable RGB lighting.",
+    "bulletPoints": [
+      "Mechanical keys for precise keystrokes",
+      "Programmable macros",
+      "Durable aluminum frame"
+    ]
+  },
+  {
+    "gameUid": "world-of-warcraft",
+    "category": "action",
+    "id": "offer007",
+    "uid": "vr-gaming-bundle",
+    "name": "VR Gaming Bundle",
+    "price": 299.99,
+    "label": "Recommended",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Step into the virtual world with this immersive VR gaming bundle.",
+    "bulletPoints": [
+      "VR headset with motion tracking",
+      "Wireless controllers for natural movements",
+      "Compatible with popular VR games"
+    ]
+  },
+  {
+    "gameUid": "diablo4",
+    "category": "action",
+    "id": "offer008",
+    "uid": "gaming-chair-pro-z",
+    "name": "Gaming Chair ProZ",
+    "price": 249.95,
+    "label": "Customer Favorite",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Ergonomically designed for maximum comfort during extended gaming sessions.",
+    "bulletPoints": [
+      "Adjustable backrest and armrests",
+      "High-density foam for support",
+      "Stylish and durable faux leather"
+    ]
+  },
+  {
+    "gameUid": "grand-theft-auto-v",
+    "category": "action",
+    "id": "offer009",
+    "uid": "gaming-console-plus",
+    "name": "Gaming Console Plus",
+    "price": 499.0,
+    "label": "Exclusive Deal",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Unwind with the latest gaming console featuring a vast game library.",
+    "bulletPoints": [
+      "4K gaming capabilities",
+      "Large storage capacity",
+      "Includes two wireless controllers"
+    ]
+  },
+  {
+    "gameUid": "grand-theft-auto-v",
+    "category": "action",
+    "id": "offer010",
+    "uid": "gaming-backpack",
+    "name": "Gaming Backpack",
+    "price": 69.95,
+    "label": "Travel Essential",
+    "discount": 5,
+    "imageUrl": "https://unsplash.it/291/300?random&gravity=center",
+    "description": "Carry your gaming gear in style with this spacious and protective backpack.",
+    "bulletPoints": [
+      "Padded compartments for laptops and accessories",
+      "Water-resistant materials",
+      "Ergonomic shoulder straps"
+    ]
+  }
+]
