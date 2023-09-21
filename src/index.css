@@ -5,11 +5,13 @@
 :root {
   --test: theme(colors.gray.950);
 }
+
 /* Hide the default password eye indicator for WebKit browsers */
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
   display: none;
 }
+
 input,
 textarea,
 button,

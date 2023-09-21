@@ -31,8 +31,11 @@ jobs:
       - name: "Install deps: ${{ matrix.node-version }} ${{ matrix.os }}"
         run: pnpm install
 
-      - name: "Lint: ${{ matrix.node-version }} ${{ matrix.os }}"
-        run: pnpm run format
+      - name: "Check: ${{ matrix.node-version }} ${{ matrix.os }}"
+        run: pnpm run check:type && pnpm run check:script && pnpm run check:format
+
+      - name: "Format: ${{ matrix.node-version }} ${{ matrix.os }}"
+        run: pnpm run format2
 
       - name: "Build: ${{ matrix.node-version }} ${{ matrix.os }}"
         run: pnpm run build
