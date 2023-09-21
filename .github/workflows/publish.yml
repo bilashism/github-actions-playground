@@ -51,4 +51,4 @@ jobs:
         run: pnpm install
 
       - name: Run lint-staged on changed files
-        run: pnpm lint-staged --diff="origin/${GITHUB_BASE_REF}...origin/${GITHUB_HEAD_REF}"
+        run: pnpm lint-staged --diff=origin/main
