@@ -46,5 +46,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint codebae
-        run: pnpm lint
+      - name: Lint change codebase
+        run: pnpm lint-staged
