@@ -60,11 +60,6 @@
       "prettier --write"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm run lint-staged"
-    }
-  },
   "dependencies": {
     "@floating-ui/react": "^0.25.4",
     "@headlessui/react": "^1.7.17",
