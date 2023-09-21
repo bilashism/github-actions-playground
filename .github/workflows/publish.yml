@@ -42,6 +42,9 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-              
+
       - name: Install dependencies
         run: pnpm install
+
+      - name: Lint codebae
+        run: pnpm lint
