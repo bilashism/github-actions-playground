@@ -41,40 +41,40 @@ jobs:
       # - name: Check formatting
       #   run: pnpm prettier --check .
 
-  publish:
-    name: "Publish: ${{ matrix.node-version }} ${{ matrix.os }}"
-    runs-on: ${{ matrix.os }}
-    if: ${{ github.ref == 'refs/heads/main' }}
-    needs: [quality]
+  # publish:
+  #   name: "Publish: ${{ matrix.node-version }} ${{ matrix.os }}"
+  #   runs-on: ${{ matrix.os }}
+  #   if: ${{ github.ref == 'refs/heads/main' }}
+  #   needs: [quality]
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-        os: [ubuntu-latest]
+  #   strategy:
+  #     matrix:
+  #       node-version: [18.x]
+  #       os: [ubuntu-latest]
 
-    steps:
-      - uses: actions/checkout@v3
+  #   steps:
+  #     - uses: actions/checkout@v3
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+  #     - name: Install pnpm
+  #       uses: pnpm/action-setup@v2.2.4
 
-      - name: "Set node version to ${{ matrix.node-version }}"
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
+  #     - name: "Set node version to ${{ matrix.node-version }}"
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         cache: "pnpm"
 
-      - name: "Install deps: ${{ matrix.node-version }} ${{ matrix.os }}"
-        run: pnpm install && pnpm i @release-it/conventional-changelog 
+  #     - name: "Install deps: ${{ matrix.node-version }} ${{ matrix.os }}"
+  #       run: pnpm install && pnpm i @release-it/conventional-changelog 
 
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          # The Checkout actions at v2 and beyond prevent pushes as another user due to persist-credentials being set to true by default
-          persist-credentials: false
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #         # The Checkout actions at v2 and beyond prevent pushes as another user due to persist-credentials being set to true by default
+  #         persist-credentials: false
       
-      - name: release-it
-        uses: TheRealWaldo/release-it@v0.7.2
-        with:
-          json-opts: '{"dry-run": true}'
+  #     - name: release-it
+  #       uses: TheRealWaldo/release-it@v0.7.2
+  #       with:
+  #         json-opts: '{"dry-run": true}'
