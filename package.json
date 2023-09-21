@@ -13,7 +13,7 @@
     "format": "prettier --config ./.prettierrc -w src/**/*.{js,jsx,ts,tsx,css,html,json} && pnpm run lint:fix && git update-index",
     "pretest": "pnpm run lint:fix",
     "test": "jest --colors --passWithNoTests",
-    "posttest": "npx http-server coverage/lcov-report",
+    "posttest": "pnpm dlx http-server coverage/lcov-report",
     "test:watch": "pnpm run test --collectCoverage=false --watch",
     "prepare": "husky install",
     "commitizen": "cz",
