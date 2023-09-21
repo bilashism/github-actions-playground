@@ -69,8 +69,8 @@ jobs:
 
       - name: "Initialize git user"
         run: | 
-            git config --global user.email "bilashism@gmail.com"
-            git config --global user.name "bilashism"
+            git config user.name github-actions[bot]
+            git config user.email github-actions[bot]@users.noreply.github.com
 
 
       - name: "Release: ${{ matrix.node-version }} ${{ matrix.os }}"
