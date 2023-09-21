@@ -15,5 +15,6 @@
   },
   "cSpell.words": ["fullboosts", "oxanium"],
   "editor.wordWrap": "on",
-  "editor.fontSize": 17
+  "editor.fontSize": 17,
+  "files.autoSave": "onFocusChange"
 }

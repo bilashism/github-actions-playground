@@ -30,15 +30,16 @@ jobs:
           version: 8.7.6
           run_install: false
 
-      - name: Get pnpm store directory
-        shell: bash
+      - name: Set pnpm store directory
+        id: set-store-path
         run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+          echo "export STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+          echo "$STORE_PATH" # For debugging, print the value
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - name: Cache pnpm store
+        uses: actions/cache@v3
         with:
-          path: ${{ env.STORE_PATH }}
+          path: $STORE_PATH
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
