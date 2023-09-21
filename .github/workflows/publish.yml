@@ -32,10 +32,43 @@ jobs:
         run: pnpm install
 
       - name: "Format: ${{ matrix.node-version }} ${{ matrix.os }}"
-        run: pnpm run format
+        run: pnpm run check:type && pnpm run format
 
       - name: "Build: ${{ matrix.node-version }} ${{ matrix.os }}"
         run: pnpm run build
+
+      # Uncomment this section if you want to check formatting
+      # - name: Check formatting
+      #   run: pnpm prettier --check .
+
+  publish:
+    name: "Publish: ${{ matrix.node-version }} ${{ matrix.os }}"
+    runs-on: ${{ matrix.os }}
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [quality]
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+
+      - name: "Set node version to ${{ matrix.node-version }}"
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: "Install deps: ${{ matrix.node-version }} ${{ matrix.os }}"
+        run: pnpm install
+
+      - name: "Release: ${{ matrix.node-version }} ${{ matrix.os }}"
+        run: pnpm run release
 
       # Uncomment this section if you want to check formatting
       # - name: Check formatting
