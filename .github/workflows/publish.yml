@@ -34,7 +34,6 @@ jobs:
         id: set-store-path
         run: |
           echo "export STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-          echo "$STORE_PATH" # For debugging, print the value
 
       - name: Cache pnpm store
         uses: actions/cache@v3
