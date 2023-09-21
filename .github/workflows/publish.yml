@@ -15,40 +15,36 @@ jobs:
         node-version: [18.x]
         os: [ubuntu-latest]
 
+    name: "Build&Test: node-${{ matrix.node_version }}, ${{ matrix.os }}"
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 
- 
+          # Assume PRs are less than 50 commits
+          fetch-depth: 50
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@9328bab880abf4acc377d77718d28c6ac167f154 # v35.7.2
         with:
-          node-version: ${{ matrix.node-version }}
-          # cache: 'pnpm'
+          files: |
+            docs/**
+            .github/**
+            !.github/workflows/ci.yml
+            packages/create-vite/template**
+            **.md
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        if: steps.changed-files.outputs.only_changed != 'true'
+        uses: pnpm/action-setup@v2.2.4
+
+      - name: Set node version to ${{ matrix.node_version }}
+        if: steps.changed-files.outputs.only_changed != 'true'
+        uses: actions/setup-node@v3
         with:
-          version: 8.7.6
-          run_install: false
+          node-version: ${{ matrix.node_version }}
+          cache: "pnpm"
 
-      - name: Set pnpm store directory
-        id: set-store-path
-        run: |
-          echo "export STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Cache pnpm store
-        uses: actions/cache@v3
-        with:
-          path: $STORE_PATH
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
+      - name: Install deps
+        if: steps.changed-files.outputs.only_changed != 'true'
         run: pnpm install
-
-      - name: Run format 
-        run: pnpm run lint-staged
