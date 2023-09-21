@@ -2,15 +2,18 @@ name: Publish website
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - '*'
+    branches: '*'
 
 jobs:
-  cache-and-install:
-    runs-on: ubuntu-latest
+  publish:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+        os: [ ubuntu-latest ]
 
     steps:
       - name: Checkout
@@ -19,12 +22,12 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18.14.0
 
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         with:
-          version: 7
+          version: 8.7.6
           run_install: false
 
       - name: Get pnpm store directory
@@ -41,4 +44,6 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm ci  
+      - name: Run test
+        run: pnpm test 
