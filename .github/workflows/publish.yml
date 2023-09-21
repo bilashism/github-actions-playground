@@ -46,5 +46,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint change codebase
-        run: pnpm lint-staged
+      - name: Run lint-staged on changed files
+        run: |
+          # Get a list of changed files since the last commit on the main branch
+          CHANGED_FILES=$(git diff --name-only origin/main)
+          
+          # Run lint-staged only on the changed files
+          pnpm run lint-staged -- $CHANGED_FILES
