@@ -67,8 +67,16 @@ jobs:
       - name: "Install deps: ${{ matrix.node-version }} ${{ matrix.os }}"
         run: pnpm install
 
+      - name: "Initialize git user"
+        run: | 
+            git config --global user.email "bilashism@gmail.com"
+            git config --global user.name "bilashism"
+
+
       - name: "Release: ${{ matrix.node-version }} ${{ matrix.os }}"
-        run: pnpm run release
+        run: pnpm run release --ci
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Uncomment this section if you want to check formatting
       # - name: Check formatting
