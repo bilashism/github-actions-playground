@@ -18,11 +18,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
+ 
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -47,9 +51,4 @@ jobs:
         run: pnpm install
 
       - name: Run lint-staged on changed files
-        run: |
-          # Get a list of changed files since the last commit on the main branch
-          CHANGED_FILES=$(git diff --name-only origin/main)
-          
-          # Run lint-staged only on the changed files
-          pnpm run lint-staged -- $CHANGED_FILES
+        run: pnpm lint-staged --diff="origin/${GITHUB_BASE_REF}...origin/${GITHUB_HEAD_REF}"
