@@ -31,13 +31,14 @@ jobs:
           run_install: false
 
       - name: Get pnpm store directory
-        id: get-store-path
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - name: Cache pnpm store
-        uses: actions/cache@v2
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          path: ${{ steps.get-store-path.outputs.store_path }}
+          path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
